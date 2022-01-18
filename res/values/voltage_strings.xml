@@ -442,5 +442,6 @@ When the screen is off, the torch can be enabled with one of the following key c
 
      <!-- Home -->
      <string name="wellbeing">Digital Wellbeing</string>
+     <string name="ds_ia">yourkeyhere</string>
 
 </resources>
