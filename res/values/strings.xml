@@ -13670,4 +13670,7 @@
 
     <!-- Text for Search bar of Settings home screen [CHAR LIMIT=34] -->
     <string name="homepage_search">Search Settings</string>
+
+    <string name="sandboxed_google_play">Sandboxed Google Play</string>
+    <string name="sandboxed_google_play_work_profile">Sandboxed Google Play (work profile)</string>
 </resources>
