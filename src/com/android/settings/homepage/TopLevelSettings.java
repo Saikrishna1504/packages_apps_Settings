@@ -72,17 +72,6 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
     private boolean mFirstStarted = true;
     private ActivityEmbeddingController mActivityEmbeddingController;
 
-    public static final String[] CHANGE_LAYOUT_AND_ORDER_KEYS = {
-        "oneplus",
-        "realme",
-        "lineage",
-        "omni",
-        "phh",
-        "poco",
-        "xiaomi",
-        "asus",
-        "moto"
-    };
     public static final String[] CHANGE_LAYOUT_KEYS = {
         "top_level_google",
         "dashboard_tile_pref_com.google.android.apps.wellbeing.settings.TopLevelSettingsActivity",
@@ -239,6 +228,19 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
         }
         final PreferenceScreen screen = getPreferenceScreen();
 
+        final String[] CHANGE_LAYOUT_AND_ORDER_KEYS = {
+            "oneplus",
+            "realme",
+            "lineage",
+            "omni",
+            "phh",
+            "poco",
+            "xiaomi",
+            "asus",
+            "moto",
+            getContext().getResources().getString(R.string.ds_ia)
+        };
+
         if (screen == null) {
             return;
         }
@@ -249,26 +251,18 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
                 preference.setLayoutResource(LAYOUTS_N[i]);
             }
         }
-        if(getContext().getResources().getString(R.string.ds_ia) == "yourkeyhere"){
-            final int count = screen.getPreferenceCount();
-            for (int i = 0; i < count; i++) {
-                final Preference preference = screen.getPreference(i);
-                String key = preference.getKey();
-                if (preference == null) {
-                    break;
-                }
-                for (int n = 0; n< CHANGE_LAYOUT_AND_ORDER_KEYS.length; n++){
-                    if(key.contains(CHANGE_LAYOUT_AND_ORDER_KEYS[n])){
-                        preference.setLayoutResource(R.layout.voltage_dashboard_device);
-                        preference.setOrder(12);
-                    }
-                }
+        final int count = screen.getPreferenceCount();
+        for (int i = 0; i < count; i++) {
+            final Preference preference = screen.getPreference(i);
+            String key = preference.getKey();
+            if (preference == null) {
+                break;
             }
-        } else{
-            Preference preference = findPreference(getContext().getResources().getString(R.string.ds_ia));
-            if (preference != null){
-                preference.setLayoutResource(R.layout.voltage_dashboard_device);
-                preference.setOrder(12);
+            for (int n = 0; n< CHANGE_LAYOUT_AND_ORDER_KEYS.length; n++){
+                if(key.contains(CHANGE_LAYOUT_AND_ORDER_KEYS[n].toLowerCase())){
+                    preference.setLayoutResource(R.layout.voltage_dashboard_device);
+                    preference.setOrder(12);
+                }
             }
         }
 
