@@ -210,6 +210,8 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import com.power.hub.powerhub;
 
+import con.android.settings.wifi.tether.WifiTetherClientManager;
+
 public class SettingsGateway {
 
     /**
@@ -407,7 +409,8 @@ public class SettingsGateway {
             HearingDevicePairingFragment.class.getName(),
             ZenModesListFragment.class.getName(),
             ZenModeFragment.class.getName(),
-            powerhub.class.getName()
+            powerhub.class.getName(),
+            WifiTetherClientManager.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
