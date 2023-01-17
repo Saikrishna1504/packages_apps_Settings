@@ -133,4 +133,16 @@
     <string name="global_vpn_summary">Force all traffic on the device through this VPN, including work profile and other users.</string>
     <string name="global_vpn_summary_on">Force all traffic on the device through this VPN, including work profile and other users. Note: When enabled, you will not be able to use a separate VPN in a work profile or other users</string>
     <string name="global_vpn_summary_any_vpn_active">You need to disable all active VPN connections first to enable this</string>
+
+    <!-- Torch Power button gestures -->
+    <string name="power_button_torch_title">Quickly enable torch</string>
+    <string name="use_power_button_torch_title">Use screen-off quick torch</string>
+    <string name="use_power_button_torch_summary">
+When the screen is off, the torch can be enabled with one of the following key combinations</string>
+    <string name="gesture_power_button_torch_category_title">When the screen is off, the torch is enabled by</string>
+    <string name="gesture_power_button_torch_long_press_title">Long-pressing the power menu button</string>
+    <string name="gesture_power_button_torch_double_tap_title">Quickly pressing the power menu button twice</string>
+    <string name="gesture_double_tap_power_summary_disabled">Disabled by flashlight gesture</string>
+    <string name="double_tap_power_for_torch_summary_disabled">Disabled by open camera gesture</string>
+
 </resources>
