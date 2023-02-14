@@ -52,4 +52,9 @@
         android:key="power_button_instantly_locks"
         android:title="@string/lockpattern_settings_enable_power_button_instantly_locks" />
 
+    <SwitchPreferenceCompat
+        android:key="allow_keyguard_camera"
+        android:title="@string/keyguard_camera_title"
+        settings:boolSettingField="android.ext.settings.ExtSettings ALLOW_KEYGUARD_CAMERA" />
+
 </PreferenceScreen>
