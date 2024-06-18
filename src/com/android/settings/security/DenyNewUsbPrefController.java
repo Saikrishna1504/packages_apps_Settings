@@ -23,12 +23,21 @@ public class DenyNewUsbPrefController extends AbstractListPreferenceController {
             DenyNewUsbSetting.ENABLED
     );
 
+    private final boolean isUsbPortSecuritySupported;
+
     public DenyNewUsbPrefController(Context ctx, String key) {
         super(ctx, key);
+
+        isUsbPortSecuritySupported = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_usbPortSecuritySupported);
     }
 
     @Override
     public int getAvailabilityStatus() {
+        if (isUsbPortSecuritySupported) {
+            return UNSUPPORTED_ON_DEVICE;
+        }
+
         return getGlobalSettingAvailability(mContext);
     }
 
