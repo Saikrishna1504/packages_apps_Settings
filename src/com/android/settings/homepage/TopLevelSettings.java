@@ -72,6 +72,27 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
     private boolean mFirstStarted = true;
     private ActivityEmbeddingController mActivityEmbeddingController;
 
+    public static final String[] CHANGE_LAYOUT_AND_ORDER_KEYS = {
+        "dashboard_tile_pref_com.oneplus.extras.DeviceSettings",
+        "dashboard_tile_pref_org.lineageos.settings.device",
+        "dashboard_tile_pref_org.lineageos.settings",
+        "dashboard_tile_pref_org.omnirom.devices",
+        "dashboard_tile_pref_org.omnirom.device",
+        "dashboard_tile_pref_com.poco.parts",
+        "dashboard_tile_pref_com.xiaomi.parts",
+        "dashboard_tile_pref_com.asus.zenparts"
+    };
+    public static final String[] CHANGE_LAYOUT_KEYS = {
+        "top_level_google",
+        "dashboard_tile_pref_com.google.android.apps.wellbeing.settings.TopLevelSettingsActivity",
+        "top_level_wellbeing",
+    };
+    public static final int[] LAYOUTS_N = {
+        R.layout.voltage_dashboard_google,
+        R.layout.voltage_dashboard_wellbeing,
+        R.layout.voltage_dashboard_device
+    };
+
     public TopLevelSettings() {
         final Bundle args = new Bundle();
         // Disable the search icon because this page uses a full search view in actionbar.
@@ -215,13 +236,19 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
         if (Flags.homepageRevamp()) {
             return;
         }
-        int tintColor = Utils.getHomepageIconColor(getContext());
-        iteratePreferences(preference -> {
-            Drawable icon = preference.getIcon();
-            if (icon != null) {
-                icon.setTint(tintColor);
+        for (int i = 0; i < CHANGE_LAYOUT_KEYS.length; i++) {
+            Preference preference = findPreference(CHANGE_LAYOUT_KEYS[i]);
+            if (preference != null){
+                preference.setLayoutResource(LAYOUTS_N[i]);
             }
-        });
+        }
+        for (int i = 0; i < CHANGE_LAYOUT_AND_ORDER_KEYS.length; i++) {
+            Preference preference = findPreference(CHANGE_LAYOUT_AND_ORDER_KEYS[i]);
+            if (preference != null){
+                preference.setLayoutResource(R.layout.voltage_dashboard_device);
+                preference.setOrder(12);
+            }
+        }
     }
 
     @Override

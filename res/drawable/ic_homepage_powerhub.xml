@@ -16,15 +16,15 @@
 
     <item>
         <com.android.settingslib.widget.AdaptiveIconShapeDrawable
-                android:color="@color/homepage_powerhub_background"
                 android:width="@dimen/dashboard_tile_image_size"
-                android:height="@dimen/dashboard_tile_image_size" />
+                android:height="@dimen/dashboard_tile_image_size"
+                android:color="@color/homepage_icon_bg" />
     </item>
 
     <item
+        android:gravity="center"
+        android:tint="@color/homepage_subicon_bg"
         android:width="@dimen/dashboard_tile_foreground_image_size"
         android:height="@dimen/dashboard_tile_foreground_image_size"
-        android:start="@dimen/dashboard_tile_foreground_image_inset"
-        android:top="@dimen/dashboard_tile_foreground_image_inset"
         android:drawable="@drawable/ic_powerhub" />
 </layer-list> 
