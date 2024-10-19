@@ -71,6 +71,8 @@ public class SettingsApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
+        VanadiumLibraryCleanup.maybeRun(this);
+
         if (Flags.catalyst()) {
             PreferenceScreenRegistry.INSTANCE.setPreferenceScreensSupplier(
                     this::getPreferenceScreens);
