@@ -63,7 +63,17 @@
             android:summary="@string/summary_placeholder"
             android:fragment="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionSettings"
             app:controller="com.android.settings.deviceinfo.firmwareversion.VoltageVersionPreferenceController"
-            app:layout="@layout/voltage_card_top_abt"/>
+            app:layout="@layout/voltage_card_mid_abt"/>
+
+        <!-- voltage maintainer -->
+        <Preference
+            android:key="maintainer"
+            android:icon="@drawable/maintainer_about"
+            android:order="7"
+            android:title="@string/maintainer"
+            android:summary="@string/summary_placeholder"
+            app:controller="com.android.settings.deviceinfo.voltage.VoltageMaintainerPreferenceController"
+            app:layout="@layout/voltage_card_mid_abt"/>
 
         <!-- Model & hardware -->
         <Preference
@@ -82,7 +92,7 @@
         <Preference
             android:icon="@drawable/uptime"
             android:key="up_time"
-            android:order="7"
+            android:order="8"
             android:title="@string/status_up_time"
             android:summary="@string/summary_placeholder"
             android:selectable="false"
@@ -92,7 +102,7 @@
         <Preference
             android:icon="@drawable/build_acc"
             android:key="build_number"
-            android:order="8"
+            android:order="9"
             android:title="@string/build_number"
             android:summary="@string/summary_placeholder"
             app:enableCopying="true"
